@@ -1,8 +1,13 @@
 import { useState } from "react";
 
-function AddRoommates() {
+function AddRoommates({
+  roommates,
+  setRoommates,
+}: Readonly<{
+  roommates: string[];
+  setRoommates: React.Dispatch<React.SetStateAction<string[]>>;
+}>) {
   const [name, setName] = useState("");
-  const [roommates, setRoommates] = useState<string[]>([]);
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
